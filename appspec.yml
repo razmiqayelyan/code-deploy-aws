@@ -2,11 +2,10 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/html
+    destination: /home/ubuntu/code-deploy-aws
 
 hooks:
   ApplicationStart:
-    - location: /bin/bash
+    - location: scripts/start.sh
       timeout: 300
       runas: ubuntu
-      script: "sudo cp /var/www/html/index.html /var/www/html/index.html"
